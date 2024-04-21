@@ -1,11 +1,15 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
+
 const heading1 = React.createElement(
     "h1",
-    { className: "heading", id: "title" },
+    { className: "heading", id: "title1" },
     "Namste EveryOne!!"
   );
   const heading2 = React.createElement(
     "h1",
-    { className: "heading", id: "title" },
+    { className: "heading", id: "title2" },
     "Let's Start ReactJs Journey"
   );
 
