@@ -1,13 +1,12 @@
 {
-  "name": "03-ignition-of-app",
+  "name": "05-food-delivary-app",
   "version": "1.0.0",
-  "description": "React with prcel bundler lib",
+  "description": "Food Delivary App like swiggy",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.html"
   },
-  "author": "",
+  "author": "Mahesh Bhosale",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
