@@ -34,3 +34,25 @@
 .card img {
   width: 15rem;
 }
+
+.searchBar {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.searchBar input {
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.searchBar button {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  width: 5rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}

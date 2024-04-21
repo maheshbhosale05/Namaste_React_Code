@@ -1,26 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import styles from "./App.css";
-
-const Title = () => {
-  return <h2>Food Villa</h2>;
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <ul className="navigation-lists">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact</li>
-        <li>Card</li>
-      </ul>
-    </div>
-  );
-};
-
-const restaurantList = [
+export const restaurantList = [
   {
     type: "restaurant",
     info: {
@@ -1025,51 +1003,3 @@ const restaurantList = [
     bottomContainers: [],
   },
 ];
-
-const RestaurantCard = (props) => {
-  const { imageUrl, name, rating, cuisine } = props;
-  return (
-    <div className="card">
-      <img alt={name} src={imageUrl} />
-      <h3>{name}</h3>
-      <h4>{cuisine}</h4>
-      <p>{rating} star</p>
-    </div>
-  );
-};
-
-const RestaurantList = () => {
-  return (
-    <div className="card-list">
-      {restaurantList.map((restaurant) => (
-        <RestaurantCard
-          imageUrl={restaurant.info.image.url}
-          name={restaurant.info.name}
-          rating={restaurant.info.rating.aggregate_rating}
-          cuisine={restaurant.info.cuisine.map(({ name }) => name).join(", ")}
-        />
-      ))}
-    </div>
-  );
-};
-const Body = () => {
-  return <RestaurantList />;
-};
-
-const Footer = () => {
-  return <div>Footer</div>;
-};
-
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<App />);
