@@ -1,5 +1,7 @@
+import FoodVillaLogo from "../assets/img/foodVillaLogo.jpeg";
+
 const Title = () => {
-  return <h2>Food Villa</h2>;
+  return <img src={FoodVillaLogo} width="80rem" />;
 };
 
 const Header = () => {

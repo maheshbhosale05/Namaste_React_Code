@@ -1,14 +1,18 @@
+import { restaurantImageDomainURL } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
 const RestaurantList = ({ restaurantArray }) => {
   return (
     <div className="card-list">
-      {restaurantArray.map((restaurant) => (
+      {restaurantArray.map((restaurant, index) => (
         <RestaurantCard
-          imageUrl={restaurant.info.image.url}
+          key={index}
+          imageUrl={
+            restaurantImageDomainURL + restaurant.info.cloudinaryImageId
+          }
           name={restaurant.info.name}
-          rating={restaurant.info.rating.aggregate_rating}
-          cuisine={restaurant.info.cuisine.map(({ name }) => name).join(", ")}
+          rating={restaurant.info.avgRating}
+          cuisine={restaurant.info.cuisines.map((name) => name).join(", ")}
         />
       ))}
     </div>

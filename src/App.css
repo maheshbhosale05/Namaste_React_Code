@@ -1,7 +1,19 @@
+button {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  min-width: 5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 1rem;
 }
 
@@ -24,19 +36,20 @@
 }
 
 .card {
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   min-height: 15rem;
   width: 16rem;
-  padding: 0.5rem;
   text-align: center;
 }
 
 .card img {
-  width: 15rem;
+  width: 16rem;
+  height: 10rem;
 }
 
 .searchBar {
   display: flex;
+  justify-content: right;
   gap: 1rem;
   padding-top: 1rem;
 }
@@ -47,12 +60,76 @@
   border-radius: 0.5rem;
 }
 
-.searchBar button {
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  width: 5rem;
-  font-weight: 600;
-  background-color: transparent;
-  color: black;
-  cursor: pointer;
+.no-restaurant-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
 }
+
+/* shimmer style start */
+
+.shimmer-search-block {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.shimmer-search-bar {
+  width: 20rem;
+  height: 2.5rem;
+  background-color: #ffebebf4;
+}
+
+.shimmer-search-button {
+  border-radius: 0.5rem;
+  min-width: 5rem;
+  height: 2.5rem;
+  background-color: #ffebebf4;
+}
+
+.shimmer-card-block {
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.shimmer-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  min-height: 15rem;
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shimmer-image {
+  width: 16rem;
+  height: 10rem;
+  background-color: #ffebebf4;
+}
+
+.shimmer-header {
+  height: 1.5rem;
+  background-color: #ffebebf4;
+  width: 15rem;
+}
+
+.shimmer-cusines {
+  height: 2rem;
+  background-color: #ffebebf4;
+  width: 15rem;
+  margin: 0rem;
+}
+
+.shimmer-rating {
+  height: 1rem;
+  background-color: #ffebebf4;
+  width: 3rem;
+}
+
+/* shimmer style end */
