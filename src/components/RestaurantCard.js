@@ -1,12 +1,17 @@
+import { Link } from "react-router-dom";
+
 const RestaurantCard = (props) => {
-  const { imageUrl, name, rating, cuisine } = props;
+  const { imageUrl, name, rating, cuisine, id } = props;
+
   return (
-    <div className="card">
-      <img alt={name} src={imageUrl} />
-      <h3>{name}</h3>
-      <h4>{cuisine}</h4>
-      <p>{rating} star</p>
-    </div>
+    <Link to={`/restaurantDetail/${id}`}>
+      <div className="card">
+        <img alt={name} src={imageUrl} />
+        <h3>{name}</h3>
+        <h4>{cuisine}</h4>
+        <p>{rating} star</p>
+      </div>
+    </Link>
   );
 };
 

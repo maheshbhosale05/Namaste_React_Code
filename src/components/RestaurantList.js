@@ -6,7 +6,8 @@ const RestaurantList = ({ restaurantArray }) => {
     <div className="card-list">
       {restaurantArray.map((restaurant, index) => (
         <RestaurantCard
-          key={index}
+          key={restaurant.info.id}
+          id={restaurant.info.id}
           imageUrl={
             restaurantImageDomainURL + restaurant.info.cloudinaryImageId
           }
