@@ -10,6 +10,7 @@ import AboutPage from "./components/pages/AboutPage";
 import ContactPage from "./components/pages/ContactPage";
 import RestaurantDetails from "./components/RestaurantDetails";
 import LoginForm from "./components/LoginForm";
+import Profile from "./components/Profile";
 
 const App = () => {
   return (
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <AboutPage />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "contact",
