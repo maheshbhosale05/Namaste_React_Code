@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiggy-link-hover:hover {
+  color: #ff0d0d;
+}
+
+.swiggy-button-hover:hover {
+  color: #ff0d0d;
+  border-color: #ff0d0d;
+}
+
+/* 
 button {
   border: 1px solid black;
   border-radius: 0.5rem;
@@ -68,7 +82,6 @@ button {
   margin-top: 20vh;
 }
 
-/* shimmer style start */
 
 .shimmer-search-block {
   display: flex;
@@ -132,4 +145,4 @@ button {
   width: 3rem;
 }
 
-/* shimmer style end */
+*/

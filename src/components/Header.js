@@ -12,27 +12,45 @@ const Header = () => {
   const isOnline = useOnline();
 
   return (
-    <div className="header">
+    <div className="flex items-center justify-between p-4 shadow-md gap-2">
       <Title />
-      <ul className="navigation-lists">
+      <ul className="flex gap-4">
         <li>
-          <Link to="/">Home</Link>
+          <Link className="swiggy-link-hover" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About Us</Link>
+          <Link className="swiggy-link-hover" to="/about">
+            About Us
+          </Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link className="swiggy-link-hover" to="/contact">
+            Contact
+          </Link>
         </li>
-        <li>Card</li>
+        <li>
+          <Link className="swiggy-link-hover" to="/instaMart">
+            InstaMart
+          </Link>
+        </li>
+      </ul>
+      <ul className="flex gap-2 items-center">
+        <li>
+          <Link to="/login">
+            <button className="border-2 rounded-lg px-2 py-1 swiggy-button-hover">
+              {isLoggedIn ? "Log Out" : "Login"}
+            </button>
+          </Link>
+        </li>
+        <li>
+          <button className="border-2 rounded-lg px-2 py-1 swiggy-button-hover">
+            Card
+          </button>
+        </li>
         <li>{isOnline ? "✅" : "🛑"}</li>
       </ul>
-      <div>
-        <Link to="/instaMart">InstaMart</Link>
-        <Link to="/login">
-          <button>{isLoggedIn ? "Log Out" : "Login"}</button>
-        </Link>
-      </div>
     </div>
   );
 };

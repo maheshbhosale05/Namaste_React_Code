@@ -52,10 +52,7 @@ const router = createBrowserRouter([
         path: "/restaurantDetail/:id",
         element: <RestaurantDetails />,
       },
-      {
-        path: "/login",
-        element: <LoginForm />,
-      },
+
       {
         path: "/instaMart",
         element: (
@@ -65,6 +62,10 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginForm />,
   },
 ]);
 

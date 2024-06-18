@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 
 const RestaurantList = ({ restaurantArray }) => {
   return (
-    <div className="card-list">
+    <div className="flex flex-wrap gap-8 justify-center pt-8">
       {restaurantArray.map((restaurant, index) => (
         <RestaurantCard
           key={restaurant.info.id}

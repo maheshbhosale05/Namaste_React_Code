@@ -46,14 +46,14 @@ const Body = () => {
 
   if (restaurantArray.length === 0) return <Shimmer />;
   return (
-    <>
+    <div className="px-8">
       <SearchBar onSearchClick={handleSearchClick} />
       {filterRestaurantArray.length > 0 ? (
         <RestaurantList restaurantArray={filterRestaurantArray} />
       ) : (
         <NoRestaurantFound onBackButtonClick={() => handleSearchClick("")} />
       )}
-    </>
+    </div>
   );
 };
 export default Body;
