@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import FoodVillaLogo from "../assets/img/foodVillaLogo.jpeg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useOnline from "../utils/useOnline";
+import { UserContext } from "../utils/userContext";
 
 const Title = () => {
   return <img src={FoodVillaLogo} width="80rem" />;
@@ -10,6 +11,8 @@ const Title = () => {
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex items-center justify-between p-4 shadow-md gap-2">
@@ -37,6 +40,9 @@ const Header = () => {
         </li>
       </ul>
       <ul className="flex gap-2 items-center">
+        <li>
+          <div>{user.name}</div>
+        </li>
         <li>
           <Link to="/login">
             <button className="border-2 rounded-lg px-2 py-1 swiggy-button-hover">
