@@ -2,11 +2,23 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestrauntMenu from "../utils/useRestrauntMenu";
 import { restaurantImageDomainURL } from "../constants";
+import { useDispatch, useSelector } from "react-redux";
+import { addItems, removeItems } from "../redux/cartSlice";
+
+const findQuantityOfItem = (cartItems, id) => {
+  const item = cartItems.find(({ detail }) => detail.id === id);
+  return item?.quantity || 0;
+};
 
 export const RestaurantDetails = () => {
   const { id } = useParams();
 
-  const [cardDetails, setCardDetails] = useRestrauntMenu(id);
+  const dispatch = useDispatch();
+
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cartItems", cartItems);
+
+  const [cardDetails] = useRestrauntMenu(id);
 
   const [menuCategoryId, setMenuCategoryId] = useState(0);
 
@@ -82,9 +94,40 @@ export const RestaurantDetails = () => {
                           alt="Meal"
                           className="h-20 w-20 pb-2"
                         />
-                        <button className="border-2 rounded-lg px-2 py-0.5 swiggy-button-hover text-sm">
-                          + Add
-                        </button>
+                        {findQuantityOfItem(cartItems, item?.card.info.id) ===
+                        0 ? (
+                          <button
+                            className="border-2 rounded-lg px-2 py-0.5 swiggy-button-hover text-sm"
+                            onClick={() => dispatch(addItems(item?.card.info))}
+                          >
+                            + Add
+                          </button>
+                        ) : (
+                          <div className="border-2 rounded-lg px-2 py-0.5 ">
+                            <button
+                              className="px-2 swiggy-button-hover text-lg"
+                              onClick={() =>
+                                dispatch(removeItems(item?.card.info.id))
+                              }
+                            >
+                              -
+                            </button>
+                            <span>
+                              {findQuantityOfItem(
+                                cartItems,
+                                item?.card.info.id
+                              )}
+                            </span>
+                            <button
+                              className="px-2 swiggy-button-hover text-lg"
+                              onClick={() =>
+                                dispatch(addItems(item?.card.info))
+                              }
+                            >
+                              +
+                            </button>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <hr />

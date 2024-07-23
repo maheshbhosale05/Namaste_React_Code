@@ -1,10 +1,11 @@
 import React, { Suspense, lazy, useContext } from "react";
 import ReactDOM from "react-dom/client";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import styles from "./App.css";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./components/pages/ErrorPage";
 import AboutPage from "./components/pages/AboutPage";
 import ContactPage from "./components/pages/ContactPage";
@@ -12,6 +13,7 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import LoginForm from "./components/LoginForm";
 import Profile from "./components/Profile";
 import UserContextProvider from "./utils/userContext";
+import store from "./redux/store";
 
 const InstaMart = lazy(() => import("./components/pages/InstaMart"));
 
@@ -73,7 +75,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <UserContextProvider>
-    <RouterProvider router={router} />
-  </UserContextProvider>
+  <Provider store={store}>
+    <UserContextProvider>
+      <RouterProvider router={router} />
+    </UserContextProvider>
+  </Provider>
 );

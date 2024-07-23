@@ -3,6 +3,7 @@ import FoodVillaLogo from "../assets/img/foodVillaLogo.jpeg";
 import { useContext, useState } from "react";
 import useOnline from "../utils/useOnline";
 import { UserContext } from "../utils/userContext";
+import Cart from "./Cart";
 
 const Title = () => {
   return <img src={FoodVillaLogo} width="80rem" />;
@@ -51,9 +52,7 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <button className="border-2 rounded-lg px-2 py-1 swiggy-button-hover">
-            Card
-          </button>
+          <Cart />
         </li>
         <li>{isOnline ? "✅" : "🛑"}</li>
       </ul>
